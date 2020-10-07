@@ -75,21 +75,45 @@ const visitCell = (row, column) => {
 
     // For each neighbour...
     const neighbours = shuffle([
-        [row - 1, column],
-        [row, column + 1],
-        [row + 1, column],
-        [row, column - 1]
+        [row - 1, column, 'up'],
+        [row, column + 1, 'right'],
+        [row + 1, column, 'down'],
+        [row, column - 1, 'left']
     ]);
-    console.log(neighbours);
 
-    // See if that neighbour is out of bounds
+    for (let neighbour of neighbours) {
+        const [nextRow, nextColumn, direction] = neighbour;
+        
+        // See if that neighbour is out of bounds
+        if (nextRow < 0 || nextRow >= cells || nextColumn < 0 || nextColumn >= cells) {
+            continue;
+        }
+        
+        // If we have visited that neighbour continue to next neighbour
+        if (grid[nextRow][nextColumn]) {
+            continue;
+        }
 
-    // If we have visited that neighbour continue to next neighbour
-    
-    // Remove a wall from either horizontals or verticals
+        // Remove a wall from either horizontals or verticals
+        switch(direction) {
+            case 'left':
+                verticals[row][column -1] = true;
+                break;
+            case 'right':
+                verticals[row][column] = true;
+                break;
+            case 'up':
+                horizontals[row - 1][column] = true;
+                break;
+            case 'down':
+                horizontals[row][column] = true;
+                break;
+        }
 
-    // Visit that next cell
+        // Visit that next cell
+        visitCell(nextRow, nextColumn);
+    }
 }
 
-visitCell(1, 1);
+visitCell(startRow, startColumn);
 
