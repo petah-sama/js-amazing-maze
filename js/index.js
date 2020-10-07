@@ -3,7 +3,7 @@ const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 const cellsHorizontal = 4;
 const cellsVertical = 3;
 const width = window.innerWidth;
-const height = window.innerHeight;
+const height = window.innerHeight - window.innerHeight * .05; // window.innerHeight * .05 === 5vh
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
 
@@ -25,10 +25,10 @@ Runner.run(Runner.create(), engine);
 
 // BORDER WALLS
 const walls = [
-    Bodies.rectangle(width / 2, 0, width, 2, { isStatic: true }),
-    Bodies.rectangle(width / 2, height, width, 2, { isStatic: true }),
-    Bodies.rectangle(0, height / 2, 2, height, { isStatic: true }),
-    Bodies.rectangle(width, height / 2, 2, height, { isStatic: true })
+    Bodies.rectangle(width / 2, 0, width, 2, { isStatic: true, render: { fillStyle: '#18181d'} }),
+    Bodies.rectangle(width / 2, height, width, 2, { isStatic: true, render: { fillStyle: '#18181d'} }),
+    Bodies.rectangle(0, height / 2, 2, height, { isStatic: true, render: { fillStyle: '#18181d'} }),
+    Bodies.rectangle(width, height / 2, 2, height, { isStatic: true, render: { fillStyle: '#18181d'} })
 ];
 World.add(world, walls);
 
