@@ -45,7 +45,7 @@ h1 {
     height: 100%;
     background-color: #18181d;
     border-top: none;
-    border-bottom-color: red;
+    border-bottom-color: #ffffff;
     border-left: none;
     border-right: none;
     color: white;
@@ -64,6 +64,16 @@ h1 {
                  0 0 50px #0073e6, 
                  0 0 60px #0073e6, 
                  0 0 70px #0073e6;
+}
+
+#again {
+    width: 25%;
+    height: 5%;
+    background-color: #ab0700;
+}
+
+#again:focus {
+    outline: none;
 }
 
 button {

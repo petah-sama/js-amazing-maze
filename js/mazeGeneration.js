@@ -140,7 +140,7 @@ const generateMaze = (cH=3 , cV=4) => {
                     friction: 0,
                     label: 'wall',
                     render: {
-                        fillStyle: 'red'
+                        fillStyle: '#ab0700'
                     }
                 }
             );
@@ -163,7 +163,7 @@ const generateMaze = (cH=3 , cV=4) => {
                     isStatic: true,
                     label: 'wall',
                     render: {
-                        fillStyle: 'red'
+                        fillStyle: '#ab0700'
                     }
                 }
             );
