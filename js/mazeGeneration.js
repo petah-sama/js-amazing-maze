@@ -210,16 +210,16 @@ const generateMaze = (cH=3 , cV=4) => {
         const { x, y } = ball.velocity;
 
         if ( event.key === 'ArrowUp' || event.key === 'w') {
-            Body.setVelocity(ball, { x, y: -3 });
+            Body.setVelocity(ball, { x, y: -3.5 });
         }
         if ( event.key === 'ArrowRight' || event.key === 'd') {
-            Body.setVelocity(ball, { x: 3, y });
+            Body.setVelocity(ball, { x: 3.5, y });
         }
         if ( event.key === 'ArrowDown' || event.key === 's') {
-            Body.setVelocity(ball, { x, y: 3 });
+            Body.setVelocity(ball, { x, y: 3.5 });
         }
         if ( event.key === 'ArrowLeft' || event.key === 'a') {
-            Body.setVelocity(ball, { x: -3, y });
+            Body.setVelocity(ball, { x: -3.5, y });
         }
     });
 
